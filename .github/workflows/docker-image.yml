@@ -6,14 +6,14 @@ on:
 
 jobs:
 
-  Build-KafkaProducer:
+  #Build-KafkaProducer:
 
-    runs-on: ubuntu-18.04
+    #runs-on: ubuntu-18.04
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Kafka-Producer/Dockerfile --tag my-image-name:$(date +%s)
+    #steps:
+    #- uses: actions/checkout@v2
+    #- name: Build the Docker image
+      #run: docker build . --file Kafka-Producer/Dockerfile --tag my-image-name:$(date +%s)
   Build-KafkaConsumer:
 
     runs-on: ubuntu-18.04
