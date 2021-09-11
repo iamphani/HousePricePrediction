@@ -16,7 +16,7 @@ RUN pwd
 RUN ls
 USER root
 RUN apt-get update && apt-get upgrade
-RUN apt-get install default-jdk
+RUN apt-get install default-jdk -y
 USER kafkauser
 RUN wget https://archive.apache.org/dist/kafka/2.2.0/kafka_2.12-2.2.0.tgz
 RUN tar -xvf kafka_2.12-2.2.0.tgz
