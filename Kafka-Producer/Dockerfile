@@ -19,7 +19,13 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 USER root
+echo $PATH
+ENV PATH=$PATH:/usr/bin
+echo $PATH
 RUN apt-get update && apt-get install snap
+echo $PATH
+ENV PATH=$PATH:/usr/bin
+echo $PATH
 RUN /usr/bin/snap install openjdk
 USER kafkauser
 RUN java -version
