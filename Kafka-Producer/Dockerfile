@@ -19,7 +19,7 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 USER root
-RUN cat Dependencies.txt >> /etc/apt/sources.list
+RUN cat Kafka-Producer/Dependencies.txt >> /etc/apt/sources.list
 RUN apt-get update -y  
 RUN wget http://security.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk-headless_8u292-b10-0ubuntu1~18.04_amd64.deb
 RUN wget http://security.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u292-b10-0ubuntu1~18.04_amd64.deb
