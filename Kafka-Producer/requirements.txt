@@ -4,4 +4,4 @@ pyspark
 scikit-learn
 matplotlib
 xgboost
-kakfa-python
+kafka-python
