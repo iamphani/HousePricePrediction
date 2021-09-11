@@ -18,7 +18,7 @@ RUN wget https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-hadoo
 RUN tar -xvf spark-2.4.3-bin-hadoop2.7.tgz
 RUN mkdir spark
 RUN mv spark-2.4.3-bin-hadoop2.7.tgz spark
-RUN apt install scala -y
+RUN apt-get update -y && apt-get install scala -y
 RUN scala -version
 RUN pip3 install pyspark==2.4.6
 RUN pip3 list | grep spark
