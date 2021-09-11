@@ -1,4 +1,5 @@
-FROM python:3.8
+FROM openjdk-8-jre
+#FROM python:3.8
 
 RUN useradd -ms /bin/bash kafkauser
 USER kafkauser
@@ -14,20 +15,13 @@ COPY Kafka-Producer/src .
 
 RUN pwd
 RUN ls
+USER ROOT
+RUN apt-get update && apt-get install python
+USER kafkauser
 RUN wget https://archive.apache.org/dist/kafka/2.2.0/kafka_2.12-2.2.0.tgz
 RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
-USER root
-RUN echo $PATH
-ENV PATH=$PATH:/usr/bin
-RUN echo $PATH
-RUN apt-get update && apt-get install snap
-RUN echo $PATH
-ENV PATH=$PATH:/usr/bin
-RUN echo $PATH
-RUN /usr/bin/snap install openjdk
-USER kafkauser
 RUN java -version
 RUN pip3 install kakfa-python
 RUN pip3 list | grep kafka
