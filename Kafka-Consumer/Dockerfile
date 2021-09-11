@@ -24,8 +24,8 @@ USER kafkauser
 RUN scala -version
 RUN pip3 install pyspark==2.4.6
 RUN pip3 list | grep spark
-RUN "export PATH=$PATH:/home/kafkauser/spark-2.4.3-bin-hadoop2.7/bin/" >> ~/.bashrc
-RUN "export PYSPARK_PYTHON=python3" >> ~/.bashrc
+RUN echo "export PATH=$PATH:/home/kafkauser/spark-2.4.3-bin-hadoop2.7/bin/" >> ~/.bashrc
+RUN echo "export PYSPARK_PYTHON=python3" >> ~/.bashrc
 RUN . ~/.bashrc
 RUN cat ~/.bashrc
 RUN echo $PATH
