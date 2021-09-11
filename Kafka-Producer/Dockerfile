@@ -1,4 +1,4 @@
-FROM java:openjdk-8-jdk-alpine
+FROM ubuntu-openjdk-8-jdk
 #FROM python:3.8
 
 RUN useradd -ms /bin/bash kafkauser
