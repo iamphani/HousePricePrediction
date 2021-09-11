@@ -19,6 +19,7 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 USER root
+RUN apt-get install software-properties-common -y
 RUN add-apt-repository ppa:openjdk-r/ppa -y
 RUN apt-get update -y && apt-get install openjdk-8-jdk -y
 USER kafkauser
