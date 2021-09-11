@@ -25,10 +25,15 @@ RUN scala -version
 RUN pip3 install pyspark==2.4.6
 RUN pip3 list | grep spark
 RUN unset SPARK_HOME && printenv SPARK_HOME || echo "unset success"
+RUN echo $SPARK_HOME 
 RUN echo "export SPARK_HOME=/home/kafkauser/spark-2.4.3-bin-hadoop2.7" >> ~/.bashrc
+RUN echo $SPARK_HOME 
+RUN echo $PATH
 RUN echo "export PATH=$PATH:$SPARK_HOME/bin" >> ~/.bashrc
+RUN echo $PATH
 RUN echo "export PYSPARK_PYTHON=python3" >> ~/.bashrc
 RUN . ~/.bashrc
+RUN echo $SPARK_HOME 
 RUN cat ~/.bashrc
 RUN echo $PATH
 #RUN pyspark
