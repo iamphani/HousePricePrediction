@@ -20,7 +20,7 @@ RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 USER root
 RUN apt-get update && apt-get install snap
-RUN snap install openjdk
+RUN /usr/bin/snap install openjdk
 USER kafkauser
 RUN java -version
 RUN pip3 install kakfa-python
