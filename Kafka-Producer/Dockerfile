@@ -23,8 +23,6 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 RUN java -version
-RUN pip3 install kakfa-python
-RUN pip3 list | grep kafka
 RUN cd kafka_2.12-2.2.0/
 RUN ls
 
