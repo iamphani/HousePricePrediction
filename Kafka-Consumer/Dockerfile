@@ -35,4 +35,4 @@ RUN echo $PATH
 RUN ls
 
 
-RUN python3 spark-submit --jars /home/kafkauser/Kafka-Consumer/src/spark-streaming-kafka-0-8-assembly_2.11-2.4.8.jar /home/kafkauser/Kafka-Consumer/src/HousePredictionConsumer.py
+RUN spark-submit --jars /home/kafkauser/Kafka-Consumer/src/spark-streaming-kafka-0-8-assembly_2.11-2.4.8.jar /home/kafkauser/Kafka-Consumer/src/HousePredictionConsumer.py
