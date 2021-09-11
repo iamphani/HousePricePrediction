@@ -1,5 +1,4 @@
-FROM ubuntu-openjdk-8-docker
-#FROM python:3.8
+FROM python:3.8
 
 RUN useradd -ms /bin/bash kafkauser
 USER kafkauser
@@ -16,7 +15,7 @@ COPY Kafka-Producer/src .
 RUN pwd
 RUN ls
 USER ROOT
-RUN apt-get update && apt-get install python
+RUN apt-get update && apt-get install openjdk
 USER kafkauser
 RUN wget https://archive.apache.org/dist/kafka/2.2.0/kafka_2.12-2.2.0.tgz
 RUN tar -xvf kafka_2.12-2.2.0.tgz
