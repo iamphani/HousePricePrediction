@@ -19,9 +19,9 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 USER root
-RUN apt-get install software-properties-common -y
-RUN add-apt-repository ppa:openjdk-r/ppa -y
-RUN apt-get update -y && apt-get install openjdk-8-jdk -y
+RUN wget http://security.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk-headless_8u191-b12-2ubuntu0.18.10.1_amd64.deb
+RUN wget http://security.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u191-b12-2ubuntu0.18.10.1_amd64.deb
+RUN dpkg -i openjdk-8-jdk_8u191-b12-2ubuntu0.18.10.1_amd64.deb openjdk-8-jdk-headless_8u191-b12-2ubuntu0.18.10.1_amd64.deb
 USER kafkauser
 RUN java -version
 RUN pip3 install kakfa-python
