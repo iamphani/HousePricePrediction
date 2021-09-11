@@ -1,4 +1,4 @@
-FROM python36
+FROM python:3.6
 
 RUN useradd -ms /bin/bash kafkauser
 USER kafkauser
