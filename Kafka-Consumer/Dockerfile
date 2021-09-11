@@ -27,7 +27,7 @@ RUN pip3 list | grep spark
 RUN echo "export PATH=$PATH:/home/kafkauser/spark-2.4.3-bin-hadoop2.7/bin" >> ~/.bashrc
 RUN echo "export PYSPARK_PYTHON=python3" >> ~/.bashrc
 RUN . ~/.bashrc
-RUN ls -l /home/kafkauser/spark-2.4.3-bin-hadoop2.7/bin/
+RUN echo $PATH
 RUN pyspark
 RUN exit
 RUN ls

@@ -19,11 +19,13 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 USER root
+RUN echo "deb http://security.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+RUN apt-get update -y  
 RUN wget http://security.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk-headless_8u292-b10-0ubuntu1~18.04_amd64.deb
 RUN wget http://security.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u292-b10-0ubuntu1~18.04_amd64.deb
 RUN wget http://security.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u292-b10-0ubuntu1~18.04_amd64.deb
 RUN wget http://security.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre_8u292-b10-0ubuntu1~18.04_amd64.deb
-RUN dpkg -i openjdk-8-jre-headless_8u292-b10-0ubuntu1~18.04_amd64.deb openjdk-8-jre_8u292-b10-0ubuntu1~18.04_amd64.deb openjdk-8-jdk_8u292-b10-0ubuntu1~18.04_amd64.deb openjdk-8-jdk-headless_8u292-b10-0ubuntu1~18.04_amd64.deb
+RUN dpkg -i openjdk-8-jre_8u292-b10-0ubuntu1~18.04_amd64.deb openjdk-8-jre-headless_8u292-b10-0ubuntu1~18.04_amd64.deb  openjdk-8-jdk_8u292-b10-0ubuntu1~18.04_amd64.deb openjdk-8-jdk-headless_8u292-b10-0ubuntu1~18.04_amd64.deb
 USER kafkauser
 RUN java -version
 RUN pip3 install kakfa-python
