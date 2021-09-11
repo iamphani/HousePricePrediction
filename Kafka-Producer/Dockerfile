@@ -14,7 +14,7 @@ COPY Kafka-Producer/src .
 
 RUN pwd
 RUN ls
-USER ROOT
+USER root
 RUN apt-get update && apt-get install openjdk-8-jdk
 USER kafkauser
 RUN wget https://archive.apache.org/dist/kafka/2.2.0/kafka_2.12-2.2.0.tgz
