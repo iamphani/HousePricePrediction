@@ -19,6 +19,7 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 USER root
+RUN apt-get update && apt-get install snap
 RUN snap install openjdk
 USER kafkauser
 RUN java -version
