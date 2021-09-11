@@ -26,7 +26,7 @@ RUN pip3 install pyspark==2.4.6
 RUN pip3 list | grep spark
 RUN echo "export PATH=$PATH:/home/kafkauser/spark/bin" >> ~/.bashrc
 RUN echo "export PYSPARK_PYTHON=python3" >> ~/.bashrc
-RUN source ~/.bashrc
+RUN . ~/.bashrc
 RUN pyspark
 RUN exit
 RUN ls
