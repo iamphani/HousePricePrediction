@@ -23,7 +23,9 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 RUN java -version
+RUN pwd
 RUN cd kafka_2.12-2.2.0/
+RUN pwd
 RUN ls
 RUN bin/zookeeper-server-start.sh config/zookeeper.properties & 
 RUN sleep 30
