@@ -1,4 +1,4 @@
-FROM ubuntu-openjdk-8-jdk
+FROM ubuntu-openjdk-8-docker
 #FROM python:3.8
 
 RUN useradd -ms /bin/bash kafkauser
