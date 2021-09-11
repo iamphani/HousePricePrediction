@@ -29,7 +29,6 @@ RUN echo "export SPARK_HOME=/home/kafkauser/spark-2.4.3-bin-hadoop2.7" >> ~/.bas
 RUN echo "export PATH=$PATH:$SPARK_HOME/bin" >> ~/.bashrc
 RUN echo "export PYSPARK_PYTHON=python3" >> ~/.bashrc
 RUN . ~/.bashrc
-RUN . ~/.bash_profile
 RUN cat ~/.bashrc
 RUN echo $PATH
 #RUN pyspark
