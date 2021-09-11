@@ -5,11 +5,11 @@ USER kafkauser
 
 WORKDIR /home/kafkauser
 
-COPY requirements.txt .
+COPY Kafka-Consumer/requirements.txt .
 
 RUN pip install -r requirements.txt && rm requirements.txt
 
-COPY src .
+COPY Kafka-Consumer/src .
 
 
 RUN pwd

@@ -5,11 +5,11 @@ USER kafkauser
 
 WORKDIR /home/kafkauser
 
-COPY requirements.txt .
+COPY Kafka-Producer/requirements.txt .
 
 RUN pip install -r requirements.txt && rm requirements.txt
 
-COPY src .
+COPY Kafka-Producer/src .
 
 
 RUN pwd
