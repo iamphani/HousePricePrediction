@@ -24,12 +24,14 @@ USER kafkauser
 RUN scala -version
 RUN pip3 install pyspark==2.4.6
 RUN pip3 list | grep spark
-RUN export PATH=$PATH:/home/kafkauser/spark-2.4.3-bin-hadoop2.7/bin/
-RUN export PYSPARK_PYTHON=python3
+RUN "export PATH=$PATH:/home/kafkauser/spark-2.4.3-bin-hadoop2.7/bin/" >> ~/.bashrc
+RUN "export PYSPARK_PYTHON=python3" >> ~/.bashrc
+RUN . ~/.bashrc
+RUN cat ~/.bashrc
 RUN echo $PATH
-RUN pyspark
-RUN exit
+#RUN pyspark
+#RUN exit
 RUN ls
 
 
-RUN python spark-submit --jars /home/kafkauser/Kafka-Consumer/src/spark-streaming-kafka-0-8-assembly_2.11-2.4.8.jar /home/kafkauser/Kafka-Consumer/src/HousePredictionConsumer.py
+RUN python3 spark-submit --jars /home/kafkauser/Kafka-Consumer/src/spark-streaming-kafka-0-8-assembly_2.11-2.4.8.jar /home/kafkauser/Kafka-Consumer/src/HousePredictionConsumer.py
