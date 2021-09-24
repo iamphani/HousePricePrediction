@@ -5,11 +5,13 @@ USER kafkauser
 
 WORKDIR /home/kafkauser
 
-COPY Kafka-Producer/requirements.txt .
+COPY ./requirements.txt .
 
 RUN pip install -r requirements.txt && rm requirements.txt
 
-COPY Kafka-Producer/src .
+COPY ./src .
+
+COPY ./ .
 
 
 RUN pwd
@@ -23,30 +25,10 @@ RUN tar -xvf kafka_2.12-2.2.0.tgz
 RUN mkdir kafka
 RUN mv kafka_2.12-2.2.0.tgz kafka
 RUN java -version
-#RUN pwd
-#RUN cd kafka_2.12-2.2.0/
-#RUN pwd
-#RUN ls
-#RUN /home/kafkauser/kafka_2.12-2.2.0/bin/zookeeper-server-start.sh /home/kafkauser/kafka_2.12-2.2.0/config/zookeeper.properties & 
-#RUN sleep 30
-#RUN /home/kafkauser/kafka_2.12-2.2.0/bin/kafka-server-start.sh /home/kafkauser/kafka_2.12-2.2.0/config/server.properties &
-#RUN sleep 30
-#RUN /home/kafkauser/kafka_2.12-2.2.0/bin/kafka-topics.sh --list --bootstrap-server localhost:9092 
-#RUN /home/kafkauser/kafka_2.12-2.2.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic house-price-prediction
-#RUN /home/kafkauser/kafka_2.12-2.2.0/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-#RUN python TestDataStreamProducer.py
-#RUN sleep(300)
 
-
-#ENTRYPOINT
-          #RUN /home/kafkauser/kafka_2.12-2.2.0/bin/zookeeper-server-start.sh /home/kafkauser/kafka_2.12-2.2.0/config/zookeeper.properties & 
-		  #RUN sleep 30,
-		  #RUN /home/kafkauser/kafka_2.12-2.2.0/bin/kafka-server-start.sh /home/kafkauser/kafka_2.12-2.2.0/config/server.properties &
-		  #RUN sleep 30
-		  #RUN /home/kafkauser/kafka_2.12-2.2.0/bin/kafka-topics.sh --list --bootstrap-server localhost:9092 
-		  #RUN /home/kafkauser/kafka_2.12-2.2.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic house-price-prediction
-		  #RUN /home/kafkauser/kafka_2.12-2.2.0/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-		  #RUN python Kafka-Producer/src/TestDataStreamProducer.py]
+ 
+ENTRYPOINT ./Start.sh
+          
           
 
 
